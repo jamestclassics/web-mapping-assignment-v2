@@ -1,0 +1,56 @@
+/* styles.css */
+
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif; /* Font style */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background-color: #f4f4f4; /* Light grey background */
+}
+
+/* Header Styles */
+header {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    padding: 10px 0; /* Top and bottom padding */
+    text-align: center; /* Center align text */
+}
+
+nav ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+nav ul li {
+    display: inline; /* Display list items in a line */
+    margin: 0 15px; /* Space between links */
+}
+
+nav ul li a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Main Section Styles */
+main {
+    padding: 20px; /* Add some padding */
+}
+
+h2 {
+    color: #333; /* Darker color for headers */
+}
+
+ul {
+    line-height: 1.6; /* Space between list items */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #007bff; /* Match header background */
+    color: white; /* White text */
+    text-align: center; /* Center align text */
+    padding: 10px 0; /* Top and bottom padding */
+    position: relative; /* Ensure footer stays at the bottom */
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,61 @@
+ol.proj.proj4.register(proj4);
+//ol.proj.get("EPSG:3857").setExtent([1097981.620540, 7078989.914320, 1126534.694225, 7097921.843611]);
+var wms_layers = [];
+
+
+        var lyr_OSMStandard_0 = new ol.layer.Tile({
+            'title': 'OSM Standard',
+            //'type': 'base',
+            'opacity': 1.000000,
+            
+            
+            source: new ol.source.XYZ({
+    attributions: ' &middot; <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors, CC-BY-SA</a>',
+                url: 'http://tile.openstreetmap.org/{z}/{x}/{y}.png'
+            })
+        });
+var format_railway_station_hamburg_1 = new ol.format.GeoJSON();
+var features_railway_station_hamburg_1 = format_railway_station_hamburg_1.readFeatures(json_railway_station_hamburg_1, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_railway_station_hamburg_1 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_railway_station_hamburg_1.addFeatures(features_railway_station_hamburg_1);cluster_railway_station_hamburg_1 = new ol.source.Cluster({
+  distance: 10,
+  source: jsonSource_railway_station_hamburg_1
+});
+var lyr_railway_station_hamburg_1 = new ol.layer.Vector({
+                declutter: false,
+                source:cluster_railway_station_hamburg_1, 
+                style: style_railway_station_hamburg_1,
+                popuplayertitle: "railway_station_hamburg",
+                interactive: true,
+                title: '<img src="styles/legend/railway_station_hamburg_1.png" /> railway_station_hamburg'
+            });
+var format_railway_station_hamburg_2 = new ol.format.GeoJSON();
+var features_railway_station_hamburg_2 = format_railway_station_hamburg_2.readFeatures(json_railway_station_hamburg_2, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_railway_station_hamburg_2 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_railway_station_hamburg_2.addFeatures(features_railway_station_hamburg_2);
+var lyr_railway_station_hamburg_2 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_railway_station_hamburg_2, 
+                style: style_railway_station_hamburg_2,
+                popuplayertitle: "railway_station_hamburg",
+                interactive: true,
+                title: '<img src="styles/legend/railway_station_hamburg_2.png" /> railway_station_hamburg'
+            });
+
+lyr_OSMStandard_0.setVisible(true);lyr_railway_station_hamburg_1.setVisible(true);lyr_railway_station_hamburg_2.setVisible(true);
+var layersList = [lyr_OSMStandard_0,lyr_railway_station_hamburg_1,lyr_railway_station_hamburg_2];
+lyr_railway_station_hamburg_1.set('fieldAliases', {'full_id': 'full_id', 'osm_id': 'osm_id', 'osm_type': 'osm_type', 'railway': 'railway', 'wheelchair:description:en': 'wheelchair:description:en', 'usage': 'usage', 'railway:preserved': 'railway:preserved', 'heritage': 'heritage', 'hvv:barrier_free_lines': 'hvv:barrier_free_lines', 'tunnel': 'tunnel', 'local_ref': 'local_ref', 'start_date': 'start_date', 'name:zh': 'name:zh', 'entrance_marker:subway': 'entrance_marker:subway', 'entrance': 'entrance', 'railway:ref:parent': 'railway:ref:parent', 'hvv:barrier_free_psv_types': 'hvv:barrier_free_psv_types', 'akn:barrier_free_psv_types': 'akn:barrier_free_psv_types', 'akn:barrier_free': 'akn:barrier_free', 'route_ref': 'route_ref', 'operator:wikipedia': 'operator:wikipedia', 'network:wikipedia': 'network:wikipedia', 'wikimedia_commons': 'wikimedia_commons', 'website': 'website', 'ref:IFOPT': 'ref:IFOPT', 'railway:station:part': 'railway:station:part', 'public_transport:station:part': 'public_transport:station:part', 'url': 'url', 'short_name': 'short_name', 'name:nl': 'name:nl', 'name:ja': 'name:ja', 'name:it': 'name:it', 'name:fr': 'name:fr', 'name:es': 'name:es', 'name:en': 'name:en', 'name:el': 'name:el', 'name:de': 'name:de', 'level': 'level', 'toilets:wheelchair': 'toilets:wheelchair', 'wheelchair:description': 'wheelchair:description', 'ref': 'ref', 'operator:wikidata': 'operator:wikidata', 'operator:short': 'operator:short', 'subway': 'subway', 'check_date:wheelchair': 'check_date:wheelchair', 'addr:street': 'addr:street', 'addr:postcode': 'addr:postcode', 'addr:city': 'addr:city', 'check_date': 'check_date', 'rail': 'rail', 'internet_access:ssid': 'internet_access:ssid', 'internet_access:fee': 'internet_access:fee', 'internet_access': 'internet_access', 'layer': 'layer', 'hha_ref': 'hha_ref', 'wikipedia': 'wikipedia', 'uic_name': 'uic_name', 'train': 'train', 'request_stop': 'request_stop', 'on_demand': 'on_demand', 'official_name': 'official_name', 'network:wikidata': 'network:wikidata', 'network:short': 'network:short', 'hvv:barrier_free': 'hvv:barrier_free', 'departures_board:speech_output': 'departures_board:speech_output', 'departures_board': 'departures_board', 'alt_name': 'alt_name', 'wikidata': 'wikidata', 'wheelchair': 'wheelchair', 'uic_ref': 'uic_ref', 'station': 'station', 'ref:station': 'ref:station', 'railway:station_category': 'railway:station_category', 'railway:ref': 'railway:ref', 'public_transport': 'public_transport', 'operator': 'operator', 'network': 'network', 'name': 'name', 'light_rail': 'light_rail', 'hvv:psv_type': 'hvv:psv_type', });
+lyr_railway_station_hamburg_2.set('fieldAliases', {'full_id': 'full_id', 'osm_id': 'osm_id', 'osm_type': 'osm_type', 'railway': 'railway', 'wheelchair': 'wheelchair', 'roof:shape': 'roof:shape', 'roof:levels': 'roof:levels', 'public_transport': 'public_transport', 'noaddress': 'noaddress', 'name': 'name', 'level': 'level', 'layer': 'layer', 'building:part': 'building:part', 'building:levels': 'building:levels', });
+lyr_railway_station_hamburg_1.set('fieldImages', {'full_id': 'TextEdit', 'osm_id': 'TextEdit', 'osm_type': 'TextEdit', 'railway': 'TextEdit', 'wheelchair:description:en': 'TextEdit', 'usage': 'TextEdit', 'railway:preserved': 'TextEdit', 'heritage': 'TextEdit', 'hvv:barrier_free_lines': 'TextEdit', 'tunnel': 'TextEdit', 'local_ref': 'TextEdit', 'start_date': 'TextEdit', 'name:zh': 'TextEdit', 'entrance_marker:subway': 'TextEdit', 'entrance': 'TextEdit', 'railway:ref:parent': 'TextEdit', 'hvv:barrier_free_psv_types': 'TextEdit', 'akn:barrier_free_psv_types': 'TextEdit', 'akn:barrier_free': 'TextEdit', 'route_ref': 'TextEdit', 'operator:wikipedia': 'TextEdit', 'network:wikipedia': 'TextEdit', 'wikimedia_commons': 'TextEdit', 'website': 'TextEdit', 'ref:IFOPT': 'TextEdit', 'railway:station:part': 'TextEdit', 'public_transport:station:part': 'TextEdit', 'url': 'TextEdit', 'short_name': 'TextEdit', 'name:nl': 'TextEdit', 'name:ja': 'TextEdit', 'name:it': 'TextEdit', 'name:fr': 'TextEdit', 'name:es': 'TextEdit', 'name:en': 'TextEdit', 'name:el': 'TextEdit', 'name:de': 'TextEdit', 'level': 'TextEdit', 'toilets:wheelchair': 'TextEdit', 'wheelchair:description': 'TextEdit', 'ref': 'TextEdit', 'operator:wikidata': 'TextEdit', 'operator:short': 'TextEdit', 'subway': 'TextEdit', 'check_date:wheelchair': 'TextEdit', 'addr:street': 'TextEdit', 'addr:postcode': 'TextEdit', 'addr:city': 'TextEdit', 'check_date': 'TextEdit', 'rail': 'TextEdit', 'internet_access:ssid': 'TextEdit', 'internet_access:fee': 'TextEdit', 'internet_access': 'TextEdit', 'layer': 'TextEdit', 'hha_ref': 'TextEdit', 'wikipedia': 'TextEdit', 'uic_name': 'TextEdit', 'train': 'TextEdit', 'request_stop': 'TextEdit', 'on_demand': 'TextEdit', 'official_name': 'TextEdit', 'network:wikidata': 'TextEdit', 'network:short': 'TextEdit', 'hvv:barrier_free': 'TextEdit', 'departures_board:speech_output': 'TextEdit', 'departures_board': 'TextEdit', 'alt_name': 'TextEdit', 'wikidata': 'TextEdit', 'wheelchair': 'TextEdit', 'uic_ref': 'TextEdit', 'station': 'TextEdit', 'ref:station': 'TextEdit', 'railway:station_category': 'TextEdit', 'railway:ref': 'TextEdit', 'public_transport': 'TextEdit', 'operator': 'TextEdit', 'network': 'TextEdit', 'name': 'TextEdit', 'light_rail': 'TextEdit', 'hvv:psv_type': 'TextEdit', });
+lyr_railway_station_hamburg_2.set('fieldImages', {'full_id': '', 'osm_id': '', 'osm_type': '', 'railway': '', 'wheelchair': '', 'roof:shape': '', 'roof:levels': '', 'public_transport': '', 'noaddress': '', 'name': '', 'level': '', 'layer': '', 'building:part': '', 'building:levels': '', });
+lyr_railway_station_hamburg_1.set('fieldLabels', {'full_id': 'inline label - visible with data', 'osm_id': 'inline label - visible with data', 'osm_type': 'inline label - visible with data', 'railway': 'inline label - visible with data', 'wheelchair:description:en': 'inline label - visible with data', 'usage': 'inline label - visible with data', 'railway:preserved': 'inline label - visible with data', 'heritage': 'inline label - visible with data', 'hvv:barrier_free_lines': 'inline label - visible with data', 'tunnel': 'inline label - visible with data', 'local_ref': 'inline label - visible with data', 'start_date': 'inline label - visible with data', 'name:zh': 'inline label - visible with data', 'entrance_marker:subway': 'inline label - visible with data', 'entrance': 'inline label - visible with data', 'railway:ref:parent': 'hidden field', 'hvv:barrier_free_psv_types': 'header label - visible with data', 'akn:barrier_free_psv_types': 'header label - visible with data', 'akn:barrier_free': 'hidden field', 'route_ref': 'hidden field', 'operator:wikipedia': 'hidden field', 'network:wikipedia': 'hidden field', 'wikimedia_commons': 'hidden field', 'website': 'hidden field', 'ref:IFOPT': 'hidden field', 'railway:station:part': 'hidden field', 'public_transport:station:part': 'hidden field', 'url': 'hidden field', 'short_name': 'hidden field', 'name:nl': 'hidden field', 'name:ja': 'hidden field', 'name:it': 'hidden field', 'name:fr': 'hidden field', 'name:es': 'inline label - visible with data', 'name:en': 'inline label - visible with data', 'name:el': 'hidden field', 'name:de': 'hidden field', 'level': 'hidden field', 'toilets:wheelchair': 'hidden field', 'wheelchair:description': 'hidden field', 'ref': 'hidden field', 'operator:wikidata': 'hidden field', 'operator:short': 'no label', 'subway': 'no label', 'check_date:wheelchair': 'no label', 'addr:street': 'no label', 'addr:postcode': 'no label', 'addr:city': 'no label', 'check_date': 'no label', 'rail': 'no label', 'internet_access:ssid': 'no label', 'internet_access:fee': 'no label', 'internet_access': 'no label', 'layer': 'no label', 'hha_ref': 'no label', 'wikipedia': 'no label', 'uic_name': 'no label', 'train': 'no label', 'request_stop': 'no label', 'on_demand': 'no label', 'official_name': 'hidden field', 'network:wikidata': 'hidden field', 'network:short': 'hidden field', 'hvv:barrier_free': 'hidden field', 'departures_board:speech_output': 'hidden field', 'departures_board': 'hidden field', 'alt_name': 'hidden field', 'wikidata': 'hidden field', 'wheelchair': 'hidden field', 'uic_ref': 'hidden field', 'station': 'hidden field', 'ref:station': 'hidden field', 'railway:station_category': 'no label', 'railway:ref': 'no label', 'public_transport': 'hidden field', 'operator': 'hidden field', 'network': 'hidden field', 'name': 'hidden field', 'light_rail': 'hidden field', 'hvv:psv_type': 'hidden field', });
+lyr_railway_station_hamburg_2.set('fieldLabels', {'full_id': 'inline label - visible with data', 'osm_id': 'inline label - visible with data', 'osm_type': 'inline label - visible with data', 'railway': 'inline label - visible with data', 'wheelchair': 'inline label - visible with data', 'roof:shape': 'inline label - visible with data', 'roof:levels': 'inline label - visible with data', 'public_transport': 'inline label - visible with data', 'noaddress': 'inline label - visible with data', 'name': 'inline label - visible with data', 'level': 'inline label - visible with data', 'layer': 'inline label - visible with data', 'building:part': 'inline label - visible with data', 'building:levels': 'inline label - visible with data', });
+lyr_railway_station_hamburg_2.on('precompose', function(evt) {
+    evt.context.globalCompositeOperation = 'normal';
+});

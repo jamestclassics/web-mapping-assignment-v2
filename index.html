@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Display of Two Web Maps</title>
+    <style>
+        /* Basic styling for the body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; /* Light gray background */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        /* Container for the maps */
+        .map-container {
+            display: flex;
+            flex-wrap: wrap; /* Allows maps to stack on smaller screens */
+            gap: 20px; /* Space between the maps */
+            width: 100%;
+            max-width: 1200px; /* Maximum width of the container */
+        }
+        
+        /* Wrapper for individual maps */
+        .map-wrapper {
+            flex: 1; /* Flex-grow */
+            min-width: 300px; /* Minimum width for smaller screens */
+            background-color: white; /* White background for maps */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+            overflow: hidden; /* Clip child elements */
+            transition: transform 0.3s; /* Smooth hover transition */
+        }
+
+        /* Hover effect */
+        .map-wrapper:hover {
+            transform: scale(1.02); /* Slightly enlarge on hover */
+        }
+
+        /* Iframe styling */
+        iframe {
+            width: 100%; /* Full width of wrapper */
+            height: 600px; /* Fixed height */
+            border: none; /* No border */
+        }
+
+        /* Title styling */
+        .map-title {
+            background-color: #0073e6; /* Blue background */
+            color: white; /* White text */
+            padding: 10px; /* Padding */
+            font-size: 18px; /* Font size */
+            text-align: center; /* Center text */
+            font-weight: bold; /* Bold text */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .map-container {
+                flex-direction: column; /* Stack maps on smaller screens */
+                align-items: center; /* Center maps */
+            }
+            .map-wrapper {
+                width: 100%; /* Full width on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; color: #333;">Explore Specialized Maps</h1>
+    <div class="map-container">
+        <!-- Map 1: Breastfeeding Friendly Locations -->
+        <div class="map-wrapper">
+            <div class="map-title">Breastfeeding Friendly Locations</div>
+            <iframe src="webmap1/map1.html" title="Map 1"></iframe>
+        </div>
+        
+        <!-- Map 2: Railways in Hamburg -->
+        <div class="map-wrapper">
+            <div class="map-title">Railways in Hamburg</div>
+            <iframe src="webmap2/map2.html" title="Map 2"></iframe>
+        </div>
+    </div>
+</body>
+</html>
